@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GlycZero - Controle Natural da Diabetes</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" />
+  <link rel="icon" type="public/png" href="logo.png" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9fdfc;
+      color: #1a1a1a;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    header .logo img {
+      height: 40px;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 4rem 2rem;
+      align-items: center;
+      gap: 2rem;
+      background: #e7fdf8;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero ul {
+      list-style: none;
+      padding: 0;
+    }
+    .hero ul li {
+      margin-bottom: .75rem;
+      display: flex;
+      align-items: center;
+    }
+    .hero ul li i {
+      margin-right: .5rem;
+      color: #0bc6a0;
+    }
+    .cta-button {
+      background: linear-gradient(90deg, #0be4a0, #00c9a7);
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: pulse 1.5s infinite;
+    }
+    .cta-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px #0bc6a0;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0px #0bc6a0; }
+      50% { box-shadow: 0 0 12px #0bc6a0; }
+      100% { box-shadow: 0 0 0px #0bc6a0; }
+    }
+    .section {
+      padding: 4rem 2rem;
+    }
+    .section img {
+      max-width: 100%;
+    }
+    .description, .social-proof, .faq, .video-section, .offers {
+      max-width: 960px;
+      margin: auto;
+    }
+    .faq-item {
+      border-bottom: 1px solid #ccc;
+      padding: 1rem 0;
+    }
+    .faq-item button {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .faq-item .answer {
+      display: none;
+      margin-top: .5rem;
+    }
+    .offers .product {
+      background: white;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .offers .product img {
+      width: 160px;
+      margin-bottom: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: white;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: none;
+    }
+    .testimonial {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    /* MOBILE RESPONSIVO */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero img {
+        width: 80%;
+        margin: auto;
+      }
+      .description > div {
+        flex-direction: column;
+        text-align: center;
+      }
+      .description img {
+        width: 80%;
+        margin: auto;
+      }
+      .offers .product img {
+        width: 70%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo GlycZero">
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Controle Natural da Diabetes com GlycZero</h1>
+      <ul>
+        <li><i class="ri-heart-pulse-fill"></i> Reduz a glicose naturalmente</li>
+        <li><i class="ri-drop-fill"></i> Estimula a insulina</li>
+        <li><i class="ri-shield-check-fill"></i> Regenera o pâncreas</li>
+        <li><i class="ri-cake-2-fill"></i> Diminui o desejo por doces</li>
+        <li><i class="ri-line-chart-fill"></i> Controle do peso e metabolismo</li>
+      </ul>
+      <button class="cta-button" onclick="scrollToOffers()">Quero GlycZero</button>
+    </div>
+    <img src="produto.png" alt="Produto GlycZero">
+  </section>
+
+  <section class="section description">
+    <div style="display: flex; gap: 2rem; align-items: center;">
+      <img src="pessoa.png" alt="Pessoa feliz">
+      <div>
+        <h2>Sinta a diferença em poucos dias!</h2>
+        <p>GlycZero é mais que um suplemento, é a solução 100% natural para quem busca qualidade de vida sem os efeitos colaterais dos medicamentos tradicionais. A fórmula milenar de Gymnema sylvestre agora com tecnologia moderna em sua cápsula diária.</p>
+        <button class="cta-button" onclick="scrollToOffers()">Quero GlycZero</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section video-section">
+    <h2 style="text-align:center;">Veja o que os médicos dizem</h2>
+    <video src="medico.MP4" controls style="width:100%; border-radius:16px;"></video>
+    <div style="text-align:center; margin-top: 1rem;">
+      <button class="cta-button" onclick="scrollToOffers()">Quero GlycZero</button>
+    </div>
+  </section>
+
+  <section class="section social-proof">
+    <h2>O que nossos clientes dizem:</h2>
+    <p>Mais de 20.000 vidas transformadas com GlycZero.</p>
+    <div class="testimonial">"Com poucos dias meu nível de açúcar no sangue melhorou drasticamente!" - Maria S.</div>
+    <div class="testimonial">"Tomei por 1 mês e meu médico ficou impressionado com os resultados." - João R.</div>
+    <div class="testimonial">"Me sinto mais leve, com energia e finalmente livre dos doces!" - Carla T.</div>
+  </section>
+
+  <section class="section faq">
+  <h2>Perguntas Frequentes</h2>
+
+  <div class="faq-item">
+    <button onclick="toggleFAQ(this)">GlycZero cura diabetes?</button>
+    <div class="answer">
+      GlycZero é um suplemento 100% natural com base em ingredientes que ajudam a estimular a produção natural de insulina, regenerar o pâncreas e controlar os níveis de açúcar no sangue. Embora não seja considerado um medicamento, muitos usuários relatam reversão da diabetes tipo 2 com uso contínuo. Os resultados podem variar de pessoa para pessoa.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button onclick="toggleFAQ(this)">Como o GlycZero funciona?</button>
+    <div class="answer">
+      A fórmula do GlycZero combina extratos como Gymnema sylvestre, canela e cromo. Esses compostos naturais ajudam o corpo a equilibrar a glicose, reduzir o desejo por açúcar e melhorar a resposta da insulina.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button onclick="toggleFAQ(this)">Qual a composição e recomendação de uso?</button>
+    <div class="answer">
+      Cada frasco contém 60 cápsulas — o suficiente para 30 dias de tratamento. A recomendação é tomar 2 cápsulas por dia, preferencialmente antes das principais refeições.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button onclick="toggleFAQ(this)">GlycZero tem aprovação da ANVISA?</button>
+    <div class="answer">
+      Sim. GlycZero é produzido em laboratório certificado com registro na ANVISA, garantindo qualidade, segurança e eficácia.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button onclick="toggleFAQ(this)">Quanto tempo demora para sentir os efeitos?</button>
+    <div class="answer">
+      A maioria dos usuários percebe melhorias significativas em até 7 dias. Para efeitos completos, o uso contínuo por no mínimo 3 meses é o mais indicado.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button onclick="toggleFAQ(this)">GlycZero tem efeitos colaterais?</button>
+    <div class="answer">
+      Não. É 100% natural, sem adição de químicos ou estimulantes, e não possui efeitos colaterais relatados.
+    </div>
+  </div>
+</section>
+
+ <section class="section offers" id="ofertas">
+  <h2>Escolha sua oferta</h2>
+
+  <div class="product">
+    <img src="produto.png" alt="1 Frasco GlycZero">
+    <h3>1 Frasco GlycZero</h3>
+    <p><strong>R$ 47,90</strong></p>
+    <a href="https://app.pushinpay.com.br/service/pay/9EBD7921-0445-4F2E-9CF5-F66F04CBBA47?produto=1FrascoGlycZero&preco=47,90&imagem=produto.png" class="cta-button">Comprar Agora</a>
+  </div>
+
+  <div class="product">
+    <img src="produto3.png" alt="3 Frascos GlycZero">
+    <h3>3 Frascos GlycZero</h3>
+    <p><strong>R$ 100,00</strong></p>
+    <a href="https://app.pushinpay.com.br/service/pay/9EC1C1B2-AC43-470F-ABEB-A1D8595F3CA9?produto=3FrascosGlycZero&preco=100,00&imagem=produto3.png" class="cta-button">Comprar Agora</a>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+  .product p {
+    margin-bottom: 30px; /* Aumentando mais o espaço entre o preço e o botão */
+  }
+
+  .cta-button {
+    text-decoration: none; /* Remove underline */
+    outline: none; /* Remove the outline (focus ring) */
+    padding: 12px 25px; /* Aumentando o padding dentro do botão */
+    display: inline-block; /* Garantir que o botão tenha o formato adequado */
+  }
+
+  .cta-button:focus {
+    outline: none; /* Remove outline when the button is focused */
+  }
+</style>
+
+
+
+  <div class="notification" id="notification">João M. acabou de comprar 3 Frascos GlycZero</div>
+
+  <script>
+    function toggleFAQ(btn) {
+      const answer = btn.nextElementSibling;
+      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    }
+    function scrollToOffers() {
+      document.getElementById('ofertas').scrollIntoView({ behavior: 'smooth' });
+    }
+    const names = ["João M.", "Maria S.", "Carlos T.", "Fernanda K.", "Luciana R.", "Igor D.", "Paula M.",
+  "André B.", "Tatiane Z.", "Leonardo C.", "Juliana H.", "Marcos L.", "Simone V.",
+  "Alana R.", "José Q.", "Pedro L.", "Marta W.", "Carla J.", "Rodrigo Y.", "Ana Paula X.",
+  "Sandra E.", "Vinícius N.", "Camila G.", "Bruno A.", "Daniela F.", "Rafael O.",
+  "Beatriz P.", "Lucas M.", "Aline S.", "Felipe C.", "Roberta K.", "Gustavo M.",
+  "Priscila T.", "Wellington B.", "Helena V.", "Diego R.", "Sílvia F.", "Eduardo J.",
+  "Thaís A.", "Alexandre Z.", "Bianca L.", "Luiz F.", "Flávia M.", "Caio H.", "Érica C.",
+  "Leandro N.", "Vanessa G.", "Henrique T.", "Letícia P.", "Guilherme S.", "Bruna R.",
+  "Tiago D.", "Isabela Y.", "Marcelo V.", "Patrícia K.", "Renan M.", "Cristiane B.",
+  "Jonas T.", "Adriana N.", "Murilo Q.", "Rafaela J.", "Alan C.", "Cíntia L.", "Matheus S.",
+  "Lúcia H.", "Fábio P.", "Lorena W.", "Nicolas F.", "Jaqueline Z.", "Everton G.",
+  "Tainá M.", "João Victor L.", "Eliane R.", "Nathan D.", "Geovana C.", "Samuel N.",
+  "Joyce A.", "Vitor S.", "Sabrina F.", "Bruno Henrique K.", "Rebeca T.", "Anderson V.",
+  "Michele O.", "Danilo Y.", "Fernanda B.", "Jorge Q.", "Natália W.", "Gabriel R.",
+  "Solange P.", "Luan M.", "Cláudia F.", "Arthur L.", "Milena C.", "Edson T.",
+  "Débora G.", "Ricardo A.", "Yasmin N.", "Daniel B.", "Graziele H.", "William Z."];
+    function showNotification() {
+      const name = names[Math.floor(Math.random() * names.length)];
+      const product = Math.random() > 0.5 ? '1 Frasco GlycZero' : '3 Frascos GlycZero';
+      const notif = document.getElementById('notification');
+      notif.innerText = `${name} acabou de comprar ${product}`;
+      notif.style.display = 'block';
+      setTimeout(() => notif.style.display = 'none', 5000);
+    }
+    setInterval(showNotification, 8000);
+  </script>
+</body>
+</html>
